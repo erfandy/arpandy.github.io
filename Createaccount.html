@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <style>
+    /* Reset default margin and padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Styling for the body and main container */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .register-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Style for the input fields */
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 12px;
+      display: none;
+      margin-top: 10px;
+    }
+
+    .form-toggle {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .form-toggle a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .form-toggle a:hover {
+      text-decoration: underline;
+    }
+      /* jpeg styling */
+   .jpeg {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 200px;
+}
+body {
+    background-image: url('36.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="register-container">
+    <h2>Create Account</h2>
+    <form onsubmit="return registerValidation(event)">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Register</button>
+      <div class="error-message" id="error-message">Please fill in all fields correctly.</div>
+    </form>
+    <div class="form-toggle">
+      <a href="javascript:void(0);" onclick="showLoginForm()">Already have an account? Login</a>
+    </div>
+  </div>
+
+  <script>
+    // Function to validate register form
+    function registerValidation(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get input values
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Simple validation
+      if (username === "" || email === "" || password === "") {
+        document.getElementById('error-message').style.display = 'block';
+        return false; // Prevent form submission
+      } else {
+        document.getElementById('error-message').style.display = 'none';
+        alert("Registration successful!");
+        // You can add logic to handle the registration process, such as sending data to a server.
+        return true; // Proceed with form submission (or further actions)
+      }
+    }
+
+    // Function to show login form (for demonstration purposes)
+    function showLoginForm() {
+      alert("Redirecting to login form...");
+      // Here you could redirect to a login page (e.g., window.location.href = '/login')
+    }
+  </script>
+
+</body>
+</html>

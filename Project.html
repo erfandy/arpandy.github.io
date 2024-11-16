@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arpandy Portofolio</title>
+  <style>
+    /* Reset dasar dan font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background: #ffffff;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Animasi untuk heading dan konten */
+    .fadeIn {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  /* Navbar */
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 15px;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+  
+    /* Header Section */
+    header {
+      background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* About Section */
+    section#about {
+      background-color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    section#about h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    section#about p {
+      font-size: 1.2rem;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    /* Projects Section */
+    section#projects {
+      background-color: #f7f7f7;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    section#projects h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .project-card {
+      display: inline-block;
+      width: 300px;
+      margin: 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    /* Contact Section */
+    section#contact {
+      background-color: #333;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    section#contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    section#contact form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      margin: 10px 0;
+      padding: 15px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #3498db;
+      text-decoration: none;
+    }
+         /* Navbar style */
+         nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 10px 20px;
+        z-index: 100;
+      }
+  
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+  
+      nav ul li {
+        margin: 0 15px;
+      }
+  
+      nav ul li a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+  
+      nav ul li a:hover {
+        background-color: #555;
+      }
+      
+      #home { background-color: #3498db; }
+      /* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: rgb(49, 3, 255);
+}
+
+.dark-mode button {
+    background-color: #000000;
+    color: #020000;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-color: #000;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+    
+  </style>
+</head>
+<body>
+    <body>
+       <!-- Dark Mode Toggle Button -->
+       <button id="dark-mode-toggle" class="dark-mode-toggle">🌙</button>
+
+     <!-- Navbar -->
+  <nav>
+    <a href="#projects">Skill</a>
+    <a href="#contact">Contact</a>
+      </nav>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project-card fadeIn">
+      <img src="karakter.jpg" alt="Project 1">
+      <h3>Project 1</h3>
+      <p>3D Game character creation project with "Chacters Creator 4".</p>
+    </div>
+    <div class="project-card fadeIn">
+      <img src="1515.jpg" alt="Project 2">
+      <h3>Project 2</h3>
+      <p>Project to create an e-commerce website with "FIGMA" .</p>
+    </div>
+    <div class="project-card fadeIn">
+      <img src="living room rendering.jpg" alt="Project 3">
+      <h3>Project 3</h3>
+      <p>Interior design project with "SKECHUP" application .</p>
+    </div>
+      <div class="project-card fadeIn">
+      <img src="Photo.jpeg " alt="Project 3">
+      <h3>Project 4</h3>
+      <p>Shooting projects for clients and selling on SHUTTERSTOCK.</p>
+    </div>
+      <div class="project-card fadeIn">
+      <img src="pppda.png" alt="Project 3">
+      <h3>Project 5</h3>
+      <p>Body car project with “AUTODESKFUSION” application .</p>
+    </div>
+      <div class="project-card fadeIn">
+      <img src="music.png" alt="Project 3">
+      <h3>Project 6</h3>
+      <p>Music mixing project with “ABLETON LIVE 9” application .</p>
+    </div>
+</div>
+<div class="project-card fadeIn">
+<img src="metahuman.png" alt="Project 3">
+<h3>Project 7</h3>
+<p>Metahuman character project with “METAHUMAN” application .</p>
+</div>
+</div>
+<div class="project-card fadeIn">
+<img src="sablon baju.png" alt="Project 3">
+<h3>Project 8</h3>
+<p>clothes screen printing project with “ADOBE PHOTOSHOP” application .</p>
+</div>
+    
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Arpandy Aspar Dwi Putra.</p>
+    <p><a href="https://www.linkedin.com/in/arpandy-putra-5633b2277/">LinkedIn</a> | <a href="https://github.com">GitHub</a></p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Implementing smooth scroll for navbar links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+    // Toggle Dark Mode
+const toggleButton = document.getElementById("dark-mode-toggle");
+toggleButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    toggleButton.textContent = document.body.classList.contains("dark-mode") ? "🌞" : "🌙";
+});
+  </script>
+
+</body>
+</html>
